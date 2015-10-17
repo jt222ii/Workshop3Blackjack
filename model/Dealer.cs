@@ -45,6 +45,24 @@ namespace BlackJack.model
             }
             return false;
         }
+        public bool Stand()
+        {
+            if (m_deck != null)
+            {
+                foreach(Card card in GetHand()) //vene om jag fatta diagrammet korrekt just nu
+                {
+                    card.Show(true);           
+                }
+                while (m_hitRule.DoHit(this))
+                {
+                    Card c = m_deck.GetCard();
+                    c.Show(true);
+                    DealCard(c);
+                }
+                return true;
+            }
+            return false;
+        }
 
         public bool IsDealerWinner(Player a_player)
         {
