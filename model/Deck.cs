@@ -21,7 +21,6 @@ namespace BlackJack.model
                     AddCard(c);
                 }
             }
-
             Shuffle();
         }
 
@@ -53,6 +52,10 @@ namespace BlackJack.model
                 m_cards.RemoveAt(index);
                 m_cards.Add(c);
             }
+
+            //m_cards.RemoveRange(0, 3);
+            //m_cards.RemoveRange(3, 6);
+            //m_cards.RemoveRange(4, 12);
         }
     }
 }
