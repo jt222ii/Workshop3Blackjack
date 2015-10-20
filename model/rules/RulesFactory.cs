@@ -16,5 +16,11 @@ namespace BlackJack.model.rules
         {
             return new AmericanNewGameStrategy();
         }
+
+        public ITieStrategy GetTieRule()
+        {
+           return new TieRulePlayerWin();
+            //return new TieRuleDealerWin();
+        }
     }
 }

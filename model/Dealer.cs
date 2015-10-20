@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace BlackJack.model
 {
@@ -12,12 +13,17 @@ namespace BlackJack.model
 
         private rules.INewGameStrategy m_newGameRule;
         private rules.IHitStrategy m_hitRule;
+        private rules.ITieStrategy m_tieRule;
+        List<IDrawCardObserver> m_observers;
 
 
         public Dealer(rules.RulesFactory a_rulesFactory)
         {
             m_newGameRule = a_rulesFactory.GetNewGameRule();
             m_hitRule = a_rulesFactory.GetHitRule();
+            m_tieRule = a_rulesFactory.GetTieRule();
+
+            m_observers = new List<IDrawCardObserver>();
         }
 
         public bool NewGame(Player a_player)
@@ -34,6 +40,8 @@ namespace BlackJack.model
 
         public bool Hit(Player a_player)
         {
+           //  m_observers.Add(nåtjävlaskit);
+
             if (m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver())
             {
                 DealCardHandler(true, a_player);
@@ -73,7 +81,11 @@ namespace BlackJack.model
             {
                 return false;
             }
-            return CalcScore() >= a_player.CalcScore();
+            else if (CalcScore() == a_player.CalcScore())
+            {
+                return m_tieRule.IsDealerWinner();
+            }
+            return CalcScore() > a_player.CalcScore();
         }
 
         public bool IsGameOver()
@@ -90,6 +102,15 @@ namespace BlackJack.model
             Card c = m_deck.GetCard();
             c.Show(hiddenCard);
             player.DealCard(c);
+            foreach (IDrawCardObserver o in m_observers)
+            {
+                o.DrawCard(c);
+            }
+        }
+
+        public void AddSub(IDrawCardObserver a_sub)
+        {
+            m_observers.Add(a_sub);
         }
     }
 }

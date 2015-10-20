@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace BlackJack.controller
 {
-    class PlayGame
+    class PlayGame : model.IDrawCardObserver
     {
+        private view.IView m_view;
         public bool Play(model.Game a_game, view.IView a_view)
         {
+            m_view = a_view;
             a_view.DisplayWelcomeMessage();
             
             a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
@@ -35,6 +38,12 @@ namespace BlackJack.controller
             }
 
             return input != (int)view.Events.Quit;
+        }
+
+        public void DrawCard(model.Card card)
+        {
+            m_view.DisplayCard(card);
+            Thread.Sleep(750);
         }
     }
 }
