@@ -9,9 +9,11 @@ namespace BlackJack.controller
     class PlayGame : model.IDrawCardObserver
     {
         private view.IView m_view;
+        private model.Game m_game;
         public bool Play(model.Game a_game, view.IView a_view)
         {
             m_view = a_view;
+            m_game = a_game;
             a_view.DisplayWelcomeMessage();
             
             a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
@@ -42,7 +44,9 @@ namespace BlackJack.controller
 
         public void DrawCard(model.Card card)
         {
-            m_view.DisplayCard(card);
+            m_view.DisplayWelcomeMessage();
+            m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
+            m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
             Thread.Sleep(750);
         }
     }

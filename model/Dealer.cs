@@ -104,6 +104,7 @@ namespace BlackJack.model
             player.DealCard(c);
             foreach (IDrawCardObserver o in m_observers)
             {
+                
                 o.DrawCard(c);
             }
         }
