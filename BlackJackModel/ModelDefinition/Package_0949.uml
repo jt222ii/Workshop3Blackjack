@@ -12,6 +12,13 @@
         isLeaf="false"
         isActiveClass="false">
         <suppliersInternal>
+          <interfaceRealization
+            Id="8e40d1b0-bf80-4da0-892b-a4cdcca7a5bb">
+            <interfaceMoniker
+              Id="db7a4be0-eef4-4a7c-a60f-7dd6f779e1dc"
+              LastKnownName="IDrawCardObserver"
+              LastKnownLocation="Package1_0950.uml" />
+          </interfaceRealization>
           <dependency
             Id="9005e116-bc4e-4496-9ac1-df5cee2ef38e">
             <interfaceMoniker

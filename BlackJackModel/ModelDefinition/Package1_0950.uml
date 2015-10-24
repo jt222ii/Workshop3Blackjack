@@ -226,6 +226,83 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="a5bc3b5d-ff81-4a51-8c63-b9710052d967"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="ITieStrategy"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="37ce194e-a356-46cb-9958-851d8f3824d8"
+              LastKnownName="ITieStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d50761c7-694c-4320-bb48-186017963a5c"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="975492c9-914e-4de2-b639-a9ba3dc3f2e0"
+                  name="ITieStrategy"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="dcd6391d-b909-4ec4-b7e4-b3dba009f7f9"
+            isDerived="false"
+            sourceEndRoleName="Dealer"
+            targetEndRoleName="IDrawCardObserver"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="db7a4be0-eef4-4a7c-a60f-7dd6f779e1dc"
+              LastKnownName="IDrawCardObserver"
+              LastKnownLocation="Package1_0950.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="843e7b93-6d42-433f-8647-d449e9b34662"
+                  name="Dealer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="15737d3e-1328-48d3-a7d9-384119d4b623"
+                  name="IDrawCardObserver"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
@@ -505,6 +582,13 @@
           </association>
         </targetEnds>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="db7a4be0-eef4-4a7c-a60f-7dd6f779e1dc"
+        name="IDrawCardObserver"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

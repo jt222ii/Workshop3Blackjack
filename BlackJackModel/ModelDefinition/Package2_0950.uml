@@ -101,6 +101,88 @@
               LastKnownName="BasicHitStrategy"
               LastKnownLocation="Package2_0950.uml" />
           </dependency>
+          <dependency
+            Id="d9405726-6d20-4254-b0e7-79b1b0680a59">
+            <classMoniker
+              Id="2fe5748c-9e64-4be3-9130-47975b8f3f2b"
+              LastKnownName="Soft17HitStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+          <dependency
+            Id="65dba5ec-3689-44ed-b6a0-85debf775861">
+            <classMoniker
+              Id="4e3c2e80-5ed3-4203-8ff0-4374888bbad6"
+              LastKnownName="TieRuleDealerWin"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+          <dependency
+            Id="a7d41c54-3863-49bb-a635-7dfdc7f52477">
+            <classMoniker
+              Id="8327ca9c-ac35-4f3b-a3a5-b04f58a65968"
+              LastKnownName="TieRulePlayerWin"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2fe5748c-9e64-4be3-9130-47975b8f3f2b"
+        name="Soft17HitStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="40576dc7-2436-4540-a0b4-1a1aec7d8d2c">
+            <interfaceMoniker
+              Id="550cd927-6beb-4715-ac7e-1afec083ec6b"
+              LastKnownName="IHitStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="37ce194e-a356-46cb-9958-851d8f3824d8"
+        name="ITieStrategy"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e3c2e80-5ed3-4203-8ff0-4374888bbad6"
+        name="TieRuleDealerWin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c838a89c-fe69-40b0-9dfb-59ccb7006dda">
+            <interfaceMoniker
+              Id="37ce194e-a356-46cb-9958-851d8f3824d8"
+              LastKnownName="ITieStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8327ca9c-ac35-4f3b-a3a5-b04f58a65968"
+        name="TieRulePlayerWin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="49a0dee7-7bbc-459d-88e4-ede8c8bd37d3">
+            <interfaceMoniker
+              Id="37ce194e-a356-46cb-9958-851d8f3824d8"
+              LastKnownName="ITieStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
         </suppliersInternal>
       </class>
     </packageHasNamedElement>
