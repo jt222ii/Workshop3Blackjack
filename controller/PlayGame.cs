@@ -24,22 +24,22 @@ namespace BlackJack.controller
                 a_view.DisplayGameOver(a_game.IsDealerWinner());
             }
 
-            int input = Convert.ToInt32(a_view.GetInput());
+            BlackJack.view.Events input = (BlackJack.view.Events)a_view.GetInput();
 
-            if (input == (int)view.Events.Play)
+            if (input == view.Events.Play)
             {
                 a_game.NewGame();
             }
-            else if (input == (int)view.Events.Hit)
+            else if (input == view.Events.Hit)
             {
                 a_game.Hit();
             }
-            else if (input == (int)view.Events.Stand)
+            else if (input == view.Events.Stand)
             {
                 a_game.Stand();
             }
 
-            return input != (int)view.Events.Quit;
+            return input != view.Events.Quit;
         }
 
         public void DrawCard(model.Card card)

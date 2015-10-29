@@ -12,7 +12,8 @@ namespace BlackJack.view
         {
             System.Console.Clear();
             System.Console.WriteLine("Hello Black Jack World");
-            System.Console.WriteLine("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
+            Enum.GetValues();
+            System.Console.WriteLine( String.Format("{0}{1}{2}{3}", Events.Play, Events.Hit, Events.Stand, Events.Quit));
         }
 
         public Enum GetInput()
@@ -31,8 +32,6 @@ namespace BlackJack.view
                 default:
                     return null;
             }
-            //return null;
-            //return System.Console.In.Read();
         }
 
         public void DisplayCard(model.Card a_card)

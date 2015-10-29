@@ -8,10 +8,10 @@ namespace BlackJack.view
 
     public enum Events
     {
-        Play,
-        Hit,
-        Stand,
-        Quit
+        Play = 'p',
+        Hit = 'h',
+        Stand = 's',
+        Quit = 'q'
     }
 
     interface IView
