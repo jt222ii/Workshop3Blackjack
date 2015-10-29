@@ -7,17 +7,14 @@ namespace BlackJack.view
 {
     class SimpleView : IView
     {
-        private const string play = "p";
-        private const string hit = "h";
-        private const string stand = "s";
-        private const string quit = "q";
 
         public void DisplayWelcomeMessage()
-        { 
+        {
+          
             System.Console.Clear();
+            System.Console.WriteLine(String.Format("{0}", (char)Events.Play));
             System.Console.WriteLine("Hello Black Jack World");
-            System.Console.WriteLine("----------------------");
-            System.Console.WriteLine("Type '{0}' to Play, '{1}' to Hit, '{2}' to Stand or '{3}' to Quit\n", play, hit, stand, quit);
+            //System.Console.WriteLine("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
         }
 
         public Enum GetInput()
@@ -25,13 +22,13 @@ namespace BlackJack.view
             string input = Console.ReadLine();
             switch (input)
             {
-                case play:
+                case "p":
                     return Events.Play;
-                case hit:
+                case "h":
                     return Events.Hit;
-                case stand:
+                case "s":
                     return Events.Stand;
-                case quit:
+                case "q":
                     return Events.Quit;
                 default:
                     return null;

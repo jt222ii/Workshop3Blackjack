@@ -7,25 +7,29 @@ namespace BlackJack.view
 {
     class SwedishView : IView 
     {
+        private const string play = "q";
+        private const string hit = "w";
+        private const string stand = "e";
+        private const string quit = "r";
         public void DisplayWelcomeMessage()
         {
             System.Console.Clear();
             System.Console.WriteLine("Hej Black Jack Världen");
             System.Console.WriteLine("----------------------");
-            System.Console.WriteLine("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
+            System.Console.WriteLine("Skriv '{0}' för att Spela, '{1}' för nytt kort, '{2}' för att stanna '{3}' för att avsluta\n", play, hit, stand, quit);
         }
         public Enum GetInput()
         {
             string input = Console.ReadLine();
             switch (input)
             {
-                case "p":
+                case play:
                     return Events.Play;
-                case "h":
+                case hit:
                     return Events.Hit;
-                case "s":
+                case stand:
                     return Events.Stand;
-                case "q":
+                case quit:
                     return Events.Quit;
                 default:
                     return null;
